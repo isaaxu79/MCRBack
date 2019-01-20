@@ -81,7 +81,13 @@ class PublicacionesApi extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $publicacion = new Publicaciones();
+
+        $publicacion->publicacion= $request->publicacion;
+        $publicacion->numLikes= $request->numLikes;
+        
+        $publicacion->save();
+        return $publicacion;
     }
 
     /**
@@ -92,6 +98,9 @@ class PublicacionesApi extends Controller
      */
     public function destroy($id)
     {
-        //
+        $publicacion=Publicaciones::find($id);
+        $publicacion->delete();
+
+        return Comensal::all();
     }
 }
