@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Comensal;
 use App\Restaurante;
 use App\Participantes;
+use App\Publicaciones;
 use App\Seguidores;
 
 class ComenController extends Controller
@@ -60,4 +61,7 @@ class ComenController extends Controller
                 return $comensal;
     }
     
+    public function publicaciones($id){
+
+    }
 }

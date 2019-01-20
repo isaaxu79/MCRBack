@@ -66,17 +66,18 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('rests/{id}','ComenController@gets');
     Route::get('data/{id}/{id2}','ComenController@data');
     Route::delete('delet/{id}/{id2}','ComenController@delet');
-    
     Route::get('best','ComenController@best');
     Route::get('bestres','ComenController@bestres');
-    
     Route::get('retosComensal/{id}', 'ComenController@show');
-    
+    Route::get('mis-publicaciones/{id}', 'ComenController@publicaciones');
+
+
     Route::apiResources([
         'restaurantecard' =>'RestauranteRetosCardApi'
     ]);
     
-});
-Route::apiResources([
+    Route::apiResources([
     'user' => 'UserApi'
 ]);
+});
+
