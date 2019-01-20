@@ -81,7 +81,7 @@ class PublicacionesApi extends Controller
      */
     public function update(Request $request, $id)
     {
-        $publicacion = new Publicaciones();
+        $publicacion = Publicaciones::find($id);
 
         $publicacion->publicacion= $request->publicacion;
         $publicacion->numLikes= $request->numLikes;
